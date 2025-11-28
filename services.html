@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services – Valessio Coiffeur Paris | Prestations haute coiffure</title>
+    <meta
+      name="description"
+      content="Balayage signature, coupes architecturées, soins profonds et rituels mariage. Découvrez toutes les prestations Valessio, salon de coiffure haut de gamme à Paris 9."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a664;
+        --cream: #f8f5ef;
+        --white: #ffffff;
+        --ink: #1a1a1a;
+        --muted: #777777;
+        --shadow: rgba(19, 14, 9, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        font-family: "Lexend Deca", sans-serif;
+        color: var(--ink);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-wrapper {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+      }
+
+      nav li:last-child a {
+        background: var(--gold);
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      nav a.active {
+        background: rgba(198, 166, 100, 0.2);
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: rgba(198, 166, 100, 0.18);
+      }
+
+      main {
+        padding: 80px 18px 100px;
+      }
+
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3.1rem);
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .hero figure {
+        margin: 32px auto 0;
+        border-radius: 32px;
+        overflow: hidden;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.08);
+      }
+
+      .hero figure img {
+        width: 100%;
+        display: block;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .tag {
+        border: 1px solid rgba(198, 166, 100, 0.4);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+        margin-bottom: 70px;
+      }
+
+      .card {
+        background: var(--white);
+        border-radius: 28px;
+        padding: 30px;
+        box-shadow: 0 30px 80px var(--shadow);
+        border: 1px solid rgba(198, 166, 100, 0.15);
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card h3 {
+        margin: 0 0 6px;
+      }
+
+      .card span {
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .list {
+        margin-top: 18px;
+        display: grid;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .pricing {
+        background: var(--white);
+        border-radius: 34px;
+        padding: 50px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.08);
+      }
+
+      .pricing h2 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 30px;
+      }
+
+      .pricing-item {
+        border: 1px solid rgba(198, 166, 100, 0.2);
+        border-radius: 24px;
+        padding: 22px;
+      }
+
+      .pricing-item strong {
+        font-size: 1.1rem;
+        display: block;
+      }
+
+      .pricing-item span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gold);
+        color: var(--white);
+        border-radius: 999px;
+        padding: 14px 26px;
+        margin-top: 32px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(198, 166, 100, 0.35);
+      }
+
+      footer {
+        background: #0f0f0f;
+        color: var(--white);
+        padding: 60px 18px;
+      }
+
+      .footer-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+      }
+
+      .footer-inner nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-inner nav a {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .footer-inner nav li:last-child a {
+        color: var(--gold);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .pricing {
+          padding: 36px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html">VALESSIO</a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="salons.html">Salons</a></li>
+            <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero fade-in">
+          <h1>Prestations sur mesure et rituels haute coiffure</h1>
+          <p>
+            Diagnostic personnalisé, gestes précis, matières nobles et protocoles de soin exclusifs. Les
+            experts Valessio orchestrent une transformation adaptée à votre rythme de vie comme à la nature de
+            vos cheveux.
+          </p>
+          <div class="tags">
+            <span class="tag">Balayage lumière</span>
+            <span class="tag">Coupe architecturée</span>
+            <span class="tag">Soins réparateurs</span>
+            <span class="tag">Mariage & événements</span>
+          </div>
+          <figure>
+            <img src="assets/img/balayage-detail.jpg" alt="Balayage signature réalisé dans notre salon" />
+          </figure>
+        </section>
+
+        <section class="grid fade-in" aria-label="Catégories de prestations">
+          <article class="card">
+            <span>Coupe & style</span>
+            <h3>Morphologie & mouvement</h3>
+            <p>
+              Consultation complète, coupe à sec ou sur cheveux lavés, finitions couture et conseils
+              d’entretien pour prolonger les effets à domicile.
+            </p>
+            <div class="list">
+              <span>Coupe signature femme · 120 €</span>
+              <span>Coupe gentleman · 80 €</span>
+              <span>Brushing lumière · 60 €</span>
+            </div>
+          </article>
+          <article class="card">
+            <span>Coloration</span>
+            <h3>Balayage haute précision</h3>
+            <p>
+              Balayage painting, gloss miroir, contrastes subtils et protocoles Blond Absolu pour un résultat
+              lumineux et naturel.
+            </p>
+            <div class="list">
+              <span>Balayage Valessio · dès 240 €</span>
+              <span>Gloss cristal · 90 €</span>
+              <span>Coloration racines · 110 €</span>
+            </div>
+          </article>
+          <article class="card">
+            <span>Soins profonds</span>
+            <h3>Rituels réparateurs</h3>
+            <p>
+              Traitements personnalisés K18, Shu Uemura ou Tokio Inkarami, complétés d’une luminothérapie pour
+              réparer en profondeur.
+            </p>
+            <div class="list">
+              <span>Rituel Tokio Inkarami · 140 €</span>
+              <span>Protocole K18 Express · 75 €</span>
+              <span>Massage cuir chevelu · 30 €</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="pricing fade-in" aria-label="Forfaits recommandés">
+          <h2>Forfaits recommandés</h2>
+          <p>
+            Toutes les prestations comprennent un diagnostic complet, des produits professionnels adaptés et un
+            conseil de coiffage personnalisé.
+          </p>
+          <div class="pricing-grid">
+            <div class="pricing-item">
+              <strong>Signature Glow</strong>
+              <span>Balayage + gloss + brushing</span>
+              <p>Dès 320 €</p>
+            </div>
+            <div class="pricing-item">
+              <strong>City Reset</strong>
+              <span>Coupe + soin profond + coiffage</span>
+              <p>190 €</p>
+            </div>
+            <div class="pricing-item">
+              <strong>Wedding Capsule</strong>
+              <span>Essai + jour J + kit retouches</span>
+              <p>Sur devis</p>
+            </div>
+          </div>
+          <a class="cta" href="contact.html">Demander un devis personnalisé</a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <p style="letter-spacing:0.08em;font-weight:600;">VALESSIO</p>
+          <p>Salon de coiffure haut de gamme · Paris 9</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="salons.html">Nos salons</a></li>
+            <li><a href="services.html" aria-current="page">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-in, .card, .pricing-item");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fadeElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Valessio Coiffeur Paris | Réservation et informations</title>
+    <meta
+      name="description"
+      content="Prenez rendez-vous chez Valessio Paris 9, contactez nos salons ou envoyez-nous un message. Réservations par téléphone, email ou formulaire."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a664;
+        --cream: #f8f5ef;
+        --white: #ffffff;
+        --ink: #1a1a1a;
+        --muted: #777777;
+        --shadow: rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+      }
+
+      header {
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-wrapper {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav li:last-child a {
+        background: var(--gold);
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      nav a.active {
+        background: rgba(198, 166, 100, 0.2);
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: rgba(198, 166, 100, 0.18);
+      }
+
+      main {
+        padding: 80px 18px 100px;
+      }
+
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 4vw, 3.1rem);
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .hero figure {
+        margin: 34px auto 0;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.08);
+      }
+
+      .hero figure img {
+        width: 100%;
+        display: block;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+        margin-bottom: 70px;
+      }
+
+      .contact-card {
+        background: var(--white);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: 0 30px 80px var(--shadow);
+        border: 1px solid rgba(198, 166, 100, 0.15);
+      }
+
+      .contact-card span {
+        color: var(--gold);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+      }
+
+      .contact-card h3 {
+        margin: 10px 0;
+      }
+
+      .contact-card p,
+      .contact-card a {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .form-wrapper {
+        background: var(--white);
+        border-radius: 34px;
+        padding: 50px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.08);
+        margin-bottom: 70px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 14px;
+        border-radius: 18px;
+        border: 1px solid rgba(198, 166, 100, 0.3);
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 0.95rem;
+        background: #fcfbf7;
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      button {
+        background: var(--gold);
+        color: var(--white);
+        border: none;
+        border-radius: 999px;
+        padding: 14px 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(198, 166, 100, 0.35);
+      }
+
+      .map {
+        background: linear-gradient(120deg, rgba(198, 166, 100, 0.15), rgba(255, 255, 255, 0.9));
+        border-radius: 30px;
+        padding: 40px;
+      }
+
+      .map iframe {
+        border: none;
+        width: 100%;
+        height: 260px;
+        border-radius: 22px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      footer {
+        background: #0f0f0f;
+        color: var(--white);
+        padding: 60px 18px;
+      }
+
+      .footer-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+      }
+
+      .footer-inner nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-inner nav a {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .footer-inner nav li:last-child a {
+        color: var(--gold);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .form-wrapper {
+          padding: 36px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html">VALESSIO</a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="salons.html">Salons</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero fade-in">
+          <h1>Contact & réservations</h1>
+          <p>
+            Réservations par téléphone, email ou via notre formulaire sécurisé. Nous répondons sous 24 h ouvrées
+            et proposons un service conciergerie pour les demandes événementielles ou déplacements.
+          </p>
+          <figure>
+            <img src="assets/img/salon-hero.jpg" alt="Espace d’accueil du salon Valessio" />
+          </figure>
+        </section>
+
+        <section class="contact-grid fade-in" aria-label="Informations de contact">
+          <article class="contact-card">
+            <span>Conciergerie</span>
+            <h3>Réservations</h3>
+            <p>+33 (0)1 53 24 78 10</p>
+            <p>conciergerie@valessio-paris.com</p>
+            <p>Du lundi au samedi · 09h00 — 20h00</p>
+          </article>
+          <article class="contact-card">
+            <span>Événementiel</span>
+            <h3>Mariages & shootings</h3>
+            <p>events@valessio-paris.com</p>
+            <p>Accompagnement backstage, défilés, mariages, tournages.</p>
+          </article>
+          <article class="contact-card">
+            <span>Groupes</span>
+            <h3>Privatisation</h3>
+            <p>corporate@valessio-paris.com</p>
+            <p>Privatisation d’espace, coffrets cadeaux, ateliers team building.</p>
+          </article>
+        </section>
+
+        <section class="form-wrapper fade-in" aria-label="Formulaire de contact">
+          <div>
+            <h2>Écrivez-nous</h2>
+            <p>
+              Décrivez votre projet ou votre besoin, nous revenons vers vous avec une proposition précise et des
+              disponibilités. Les réservations sont confirmées uniquement après échange avec nos équipes.
+            </p>
+            <ul style="list-style:none;padding:0;margin:24px 0 0;color:var(--muted);display:grid;gap:8px;font-size:0.95rem;">
+              <li>Réponse en moins de 24 h ouvrées</li>
+              <li>Paiement d’acompte possible à distance</li>
+              <li>Annulation gratuite jusqu’à 24 h avant</li>
+            </ul>
+          </div>
+          <form id="contactForm">
+            <div>
+              <label for="name">Nom complet</label>
+              <input name="name" id="name" type="text" placeholder="Camille Dupont" required />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input name="email" id="email" type="email" placeholder="camille@email.com" required />
+            </div>
+
+            <div>
+              <label for="phone">Téléphone</label>
+              <input name="phone" id="phone" type="tel" placeholder="+33" />
+            </div>
+
+            <div>
+              <label for="subject">Objet</label>
+              <input name="subject" id="subject" type="text" placeholder="Balayage, mariage, soin..." />
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea name="message" id="message" placeholder="Décrivez votre demande" required></textarea>
+            </div>
+
+            <button type="submit">Envoyer via WhatsApp</button>
+          </form>
+
+          <script>
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              const phone = "33767293039";
+
+              const name = document.getElementById("name").value;
+              const email = document.getElementById("email").value;
+              const tel = document.getElementById("phone").value;
+              const subject = document.getElementById("subject").value;
+              const msg = document.getElementById("message").value;
+
+              const finalMessage = `
+Nouvelle demande Valessio :
+———————————————
+👤 Nom : ${name}
+📧 Email : ${email}
+📱 Téléphone : ${tel}
+✂️ Objet : ${subject}
+💬 Message :
+${msg}
+
+———————————————
+Envoyé depuis le site web Valessio.
+              `;
+
+              const encoded = encodeURIComponent(finalMessage);
+              window.location.href = `https://wa.me/${phone}?text=${encoded}`;
+            });
+          </script>
+        </section>
+
+        <section class="map fade-in" aria-label="Localisation Valessio Paris">
+          <h2 style="margin-top:0;">Valessio Paris 9</h2>
+          <p>11 rue de la Chaussée-d’Antin, 75009 Paris</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.207011003189!2d2.333164!3d48.872982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e36f6e56015%3A0x2bd94b58f81df5b7!2sChauss%C3%A9e%20d'Antin%20-%20La%20Fayette!5e0!3m2!1sfr!2sfr!4v0000000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <p style="letter-spacing:0.08em;font-weight:600;">VALESSIO</p>
+          <p>Salon de coiffure haut de gamme · Paris 9</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="salons.html">Nos salons</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-in, .contact-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fadeElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expertises – Valessio Coiffeur Paris | Balayage, soins, coiffure</title>
+    <meta
+      name="description"
+      content="Balayage lumière, coupe couture, soins réparateurs et accompagnement mariée. Découvrez les expertises signature Valessio Coiffeur Paris."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a664;
+        --cream: #f8f5ef;
+        --white: #ffffff;
+        --ink: #1a1a1a;
+        --muted: #777777;
+        --shadow: rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+      }
+
+      header {
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-wrapper {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav li:last-child a {
+        background: var(--gold);
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      nav a.active {
+        background: rgba(198, 166, 100, 0.2);
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: rgba(198, 166, 100, 0.18);
+      }
+
+      main {
+        padding: 80px 18px 100px;
+      }
+
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .intro {
+        max-width: 780px;
+        margin: 0 auto 70px;
+        text-align: center;
+      }
+
+      .intro h1 {
+        font-size: clamp(2.1rem, 4vw, 3.1rem);
+        margin-bottom: 18px;
+      }
+
+      .intro p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .intro figure {
+        margin: 34px auto 0;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.08);
+      }
+
+      .intro figure img {
+        width: 100%;
+        display: block;
+      }
+
+      .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+      }
+
+      .expertise-card {
+        background: var(--white);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: 0 30px 90px var(--shadow);
+        border: 1px solid rgba(198, 166, 100, 0.15);
+        transition: transform 0.4s ease;
+      }
+
+      .expertise-card:hover {
+        transform: translateY(-6px);
+      }
+
+      .expertise-card span {
+        color: var(--gold);
+        font-size: 0.9rem;
+        letter-spacing: 0.06em;
+      }
+
+      .expertise-card h3 {
+        margin-top: 10px;
+        margin-bottom: 12px;
+      }
+
+      .expertise-card p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .expertise-card ul {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+        color: var(--ink);
+      }
+
+      .signature {
+        margin-top: 90px;
+        background: linear-gradient(120deg, rgba(198, 166, 100, 0.15), rgba(255, 255, 255, 0.9));
+        border-radius: 36px;
+        padding: 60px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .signature h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .signature-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+      }
+
+      .signature-item {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+      }
+
+      .signature-item strong {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 26px;
+        background: var(--gold);
+        color: var(--white);
+        border-radius: 999px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin-top: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(198, 166, 100, 0.35);
+      }
+
+      footer {
+        background: #0f0f0f;
+        color: var(--white);
+        padding: 60px 18px;
+      }
+
+      .footer-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+      }
+
+      .footer-inner nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-inner nav a {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .footer-inner nav li:last-child a {
+        color: var(--gold);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .signature {
+          padding: 40px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html">VALESSIO</a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="salons.html">Salons</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="expertises.html" class="active" aria-current="page">Expertises</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="intro fade-in">
+          <h1>Expertises signature Valessio</h1>
+          <p>
+            Maîtrise de la coupe française, techniques de balayage calibrées, soins réparateurs et accompagnement
+            événementiel. Chaque expertise est menée par un spécialiste formé en interne pour garantir un résultat
+            cohérent sur l’ensemble des salons.
+          </p>
+          <figure>
+            <img src="assets/img/soin-cuir-chevelu.jpg" alt="Expert Valessio réalisant un soin capillaire" />
+          </figure>
+        </section>
+
+        <section class="expertise-grid fade-in" aria-label="Expertises principales">
+          <article class="expertise-card">
+            <span>Coupe couture</span>
+            <h3>Architecture & mouvement</h3>
+            <p>
+              Approche morphologique, construction de volumes et finitions précises pour une coupe qui reste
+              impeccable plusieurs semaines.
+            </p>
+            <ul>
+              <li>Étude de la gestuelle quotidienne</li>
+              <li>Coupe à sec ou sur cheveux lavés</li>
+              <li>Finitions ciseaux hot-cut</li>
+            </ul>
+          </article>
+          <article class="expertise-card">
+            <span>Balayage lumière</span>
+            <h3>Nuances sur-mesure</h3>
+            <p>
+              Placement des voiles à main levée, travail des contrastes et glossing final pour une brillance miroir
+              durable.
+            </p>
+            <ul>
+              <li>Mapping personnalisé</li>
+              <li>Protocole renforçateur K18</li>
+              <li>Gloss protecteur anti-reflets</li>
+            </ul>
+          </article>
+          <article class="expertise-card">
+            <span>Soin réparateur</span>
+            <h3>Rituels haute performance</h3>
+            <p>
+              Diagnostics capillaires, rituels Tokio Inkarami, Shu Uemura Ultimate Reset ou LED boost pour renforcer
+              la fibre.
+            </p>
+            <ul>
+              <li>Analyse du cuir chevelu</li>
+              <li>Massage détox et oxygénation</li>
+              <li>Plan de suivi à domicile</li>
+            </ul>
+          </article>
+          <article class="expertise-card">
+            <span>Cérémonies</span>
+            <h3>Accompagnement mariée</h3>
+            <p>
+              Coaching beauty, essais multiples, coordination maquillage et coiffure pour garantir un rendu parfait
+              du voile à l’after-party.
+            </p>
+            <ul>
+              <li>Book d’inspiration personnalisé</li>
+              <li>Essai global avec accessoirisation</li>
+              <li>Présence jour J sur devis</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="signature fade-in" aria-label="Méthode Valessio">
+          <h2>Notre méthode</h2>
+          <p>
+            Chaque expertise suit un protocole précis : diagnostic, conception, exécution puis rituel de finition.
+            Les équipes se forment en continu pour garantir la même signature dans tous les salons Valessio.
+          </p>
+          <div class="signature-content">
+            <div class="signature-item">
+              <strong>01 · Diagnostic</strong>
+              <p>Analyse matière, carnation et style de vie avec photos de référence et fiche digitale.</p>
+            </div>
+            <div class="signature-item">
+              <strong>02 · Création</strong>
+              <p>Plan d’action détaillé, combinaison produits et timing partagé avec le client.</p>
+            </div>
+            <div class="signature-item">
+              <strong>03 · Finition</strong>
+              <p>Rituels de coiffage, recommandations produits et capture photo pour assurer le suivi.</p>
+            </div>
+          </div>
+          <a class="cta" href="/contact">Réserver avec un expert</a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <p style="letter-spacing:0.08em;font-weight:600;">VALESSIO</p>
+          <p>Salon de coiffure haut de gamme · Paris 9</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="salons.html">Nos salons</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-in, .expertise-card, .signature-item");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fadeElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+

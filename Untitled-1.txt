@@ -1,0 +1,5 @@
+{
+  "cursor.confirmBeforeRun": false,
+  "cursor.runCodeAutomatically": true,
+  "cursor.autoExecutePrompts": true
+}

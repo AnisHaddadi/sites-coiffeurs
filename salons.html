@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos salons – Valessio Coiffeur Paris | Maisons de coiffure haut de gamme</title>
+    <meta
+      name="description"
+      content="Découvrez les salons Valessio à Paris 9. Adresses, horaires, services premium et réservation dans nos espaces haute coiffure."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a664;
+        --cream: #f8f5ef;
+        --white: #ffffff;
+        --ink: #1a1a1a;
+        --muted: #777777;
+        --shadow: rgba(16, 12, 6, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        border-radius: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-wrapper {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      nav li:last-child a {
+        background: var(--gold);
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      nav a.active {
+        background: rgba(198, 166, 100, 0.2);
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: rgba(198, 166, 100, 0.15);
+      }
+
+      main {
+        padding: 80px 18px 100px;
+      }
+
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 4vw, 3.3rem);
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--gold);
+        color: var(--white);
+        border-radius: 999px;
+        padding: 14px 26px;
+        margin-top: 24px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(198, 166, 100, 0.35);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .card {
+        background: var(--white);
+        border-radius: 26px;
+        padding: 28px;
+        box-shadow: 0 30px 80px var(--shadow);
+        border: 1px solid rgba(198, 166, 100, 0.15);
+        transition: transform 0.4s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+      }
+
+      .card span {
+        color: var(--gold);
+        font-size: 0.9rem;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .details {
+        margin-top: 18px;
+        display: grid;
+        gap: 6px;
+        font-size: 0.95rem;
+      }
+
+      .experience {
+        margin-top: 100px;
+        border-radius: 36px;
+        background: linear-gradient(120deg, rgba(198, 166, 100, 0.18), rgba(255, 255, 255, 0.9));
+        padding: 60px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .experience h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .experience-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+      }
+
+      .experience-items div {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 22px;
+        text-align: center;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+      }
+
+      footer {
+        background: #0f0f0f;
+        color: var(--white);
+        padding: 60px 18px;
+      }
+
+      .footer-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+      }
+
+      .footer-inner nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-inner nav a {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .footer-inner nav li:last-child a {
+        color: var(--gold);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .experience {
+          padding: 40px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html">VALESSIO</a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="salons.html" class="active" aria-current="page">Salons</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero fade-in">
+          <div>
+            <h1>Nos salons Valessio à Paris 9</h1>
+            <p>
+              Des adresses confidentielles à deux pas de l’Opéra et de la Madeleine. Chaque salon a été conçu
+              comme un appartement parisien dédié au soin du cheveu, avec un accueil discret et une expertise
+              haute précision.
+            </p>
+            <a class="cta" href="contact.html">Planifier une visite</a>
+          </div>
+          <div>
+            <img src="assets/img/salon-hero.jpg" alt="Salon Valessio baigné de lumière dorée" />
+          </div>
+        </section>
+
+        <section class="grid fade-in" aria-label="Aperçu visuel des salons">
+          <article class="card" style="padding: 0;">
+            <img src="assets/img/atelier-coloriste.jpg" alt="Atelier coloriste Valessio" />
+          </article>
+          <article class="card" style="padding: 0;">
+            <img src="assets/img/balayage-detail.jpg" alt="Détail d’un service balayage" />
+          </article>
+          <article class="card" style="padding: 0;">
+            <img src="assets/img/soin-cuir-chevelu.jpg" alt="Rituel soin cuir chevelu Valessio" />
+          </article>
+        </section>
+
+        <section class="grid fade-in" aria-label="Salons Valessio">
+          <article class="card">
+            <span>Opéra</span>
+            <h3>Valessio Chaussée-d’Antin</h3>
+            <p>
+              220 m² baignés de lumière, cabines privatives pour les transformations couleur et espace soins
+              Shu Uemura. L’escale parisienne dédiée aux rendez-vous express ou aux looks couture.
+            </p>
+            <div class="details">
+              <strong>11 rue de la Chaussée-d’Antin, Paris 9</strong>
+              <span>Du lundi au samedi · 09h00 — 20h00</span>
+              <span>+33 (0)1 53 24 78 10</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span>Saint-Lazare</span>
+            <h3>Valessio Moncey</h3>
+            <p>
+              L’adresse moderne pensée pour les actifs : postes de coiffage connectés, bar à brushing rapide et
+              cabine détente avec soins LED. Idéal pour un rendez-vous beauté sur mesure.
+            </p>
+            <div class="details">
+              <strong>8 place de Budapest, Paris 9</strong>
+              <span>Du mardi au samedi · 08h30 — 19h30</span>
+              <span>+33 (0)1 42 65 12 84</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <span>Madeleine</span>
+            <h3>Valessio Boétie</h3>
+            <p>
+              Salon intimiste dédié aux créations balayage, mariages et cérémonies. Service conciergerie,
+              signature olfactive et textures couture pour une parenthèse privilégiée.
+            </p>
+            <div class="details">
+              <strong>4 rue de Surène, Paris 8</strong>
+              <span>Du mercredi au dimanche · 10h00 — 19h00</span>
+              <span>+33 (0)1 45 22 06 40</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="experience fade-in" aria-label="Expérience Valessio">
+          <h2>Une expérience signature</h2>
+          <p>
+            Accueil sur rendez-vous uniquement, diagnostic beauté, matériaux nobles, playlist sur-mesure et
+            sélection de boissons premium. Chaque détail renforce la sensation de club privé.
+          </p>
+          <div class="experience-items">
+            <div>
+              <strong>Diagnostic Haute Précision</strong>
+              <p>Analyse capillaire digitale et protocole personnalisé.</p>
+            </div>
+            <div>
+              <strong>Cabines Privées</strong>
+              <p>Espaces dédiés pour les transformations majeures en toute discrétion.</p>
+            </div>
+            <div>
+              <strong>Soins Signature</strong>
+              <p>Rituels réparateurs Tokyo Inkarami, Shu Uemura ou K18.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <p style="letter-spacing:0.08em;font-weight:600;">VALESSIO</p>
+          <p>Salon de coiffure haut de gamme · Paris 9</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="salons.html" aria-current="page">Nos salons</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="avis.html">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const elements = document.querySelectorAll(".fade-in, .card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      elements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+
