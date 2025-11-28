@@ -485,37 +485,44 @@
       fadeEls.forEach((el) => observer.observe(el));
 
       // Génération des avis depuis {{avis_data}}
-      // Remplacez {{avis_data}} par un JSON valide, exemple:
-      // const avisData = [{"note":5,"texte":"Excellent service","nom_client":"Marie D.","source":"Avis Google"},...]
-      const avisData = {{avis_data}};
       const sliderTrack = document.getElementById("slider-track");
+      
+      // Données d'exemple par défaut (pour tester le carrousel)
+      // Pour utiliser vos propres données, remplacez le tableau ci-dessous par:
+      // const avisData = {{avis_data}};
+      // où {{avis_data}} doit être un JSON valide avec exactement 5 avis
+      let avisData = [
+        {"note": 5, "texte": "Service exceptionnel, équipe très professionnelle et accueil chaleureux. Je recommande vivement !", "nom_client": "Marie D.", "source": "Avis Google"},
+        {"note": 5, "texte": "Résultat parfait, coupe impeccable et conseils personnalisés. Une expérience premium.", "nom_client": "Sophie R.", "source": "Avis Google"},
+        {"note": 5, "texte": "Ambiance apaisante, expertise au rendez-vous. Un salon qui mérite sa réputation.", "nom_client": "Inès B.", "source": "Avis Google"},
+        {"note": 5, "texte": "Balayage magnifique, coloriste expert. Je suis ravie du résultat et de l'attention portée.", "nom_client": "Camille L.", "source": "Avis Google"},
+        {"note": 5, "texte": "Service haut de gamme, équipe adorable et résultat à la hauteur de mes attentes. Parfait !", "nom_client": "Julie M.", "source": "Avis Google"}
+      ];
 
-      if (avisData && Array.isArray(avisData) && avisData.length >= 1) {
-        // Prendre exactement 5 avis
-        const avisToShow = avisData.slice(0, 5);
+      // Si vous avez remplacé {{avis_data}} par un JSON valide, décommentez la ligne suivante:
+      // avisData = {{avis_data}};
+
+      // Génération des cartes d'avis (exactement 5)
+      const avisToShow = avisData.slice(0, 5);
+      
+      avisToShow.forEach((avis, index) => {
+        const card = document.createElement("article");
+        card.className = "avis-card slide";
+        card.style.animationDelay = `${index * 0.1}s`;
         
-        avisToShow.forEach((avis) => {
-          const card = document.createElement("article");
-          card.className = "avis-card slide";
-          
-          const note = avis.note || 5;
-          const stars = "⭐".repeat(note);
-          
-          card.innerHTML = `
-            <div class="avis-header">
-              <p class="note-visuelle">${stars}</p>
-            </div>
-            <p class="texte">"${avis.texte || avis.texte_avis}"</p>
-            <span class="auteur">— ${avis.nom_client || avis.auteur} · ${avis.source || avis.source_avis}</span>
-          `;
-          
-          sliderTrack.appendChild(card);
-        });
-      } else {
-        // Fallback si les données ne sont pas disponibles - afficher un message
-        sliderTrack.innerHTML = '<p style="text-align:center;color:var(--muted);padding:40px;">Les avis seront chargés prochainement.</p>';
-        console.warn("Les données d'avis ne sont pas disponibles. Utilisez {{avis_data}} avec un JSON valide contenant 5 avis.");
-      }
+        const note = avis.note || 5;
+        const stars = "⭐".repeat(note);
+        
+        card.innerHTML = `
+          <div class="avis-header">
+            <p class="note-visuelle">${stars}</p>
+          </div>
+          <p class="texte">"${avis.texte || avis.texte_avis || ''}"</p>
+          <span class="auteur">— ${avis.nom_client || avis.auteur || 'Client'} · ${avis.source || avis.source_avis || 'Avis Google'}</span>
+        `;
+        
+        sliderTrack.appendChild(card);
+      });
 
       // Gestion module étoiles
       const stars = document.querySelectorAll(".star");
