@@ -419,6 +419,146 @@
       );
       elements.forEach((el) => observer.observe(el));
     </script>
+
+    <!-- Chatbot -->
+    <div id="chatbot-button">💬</div>
+    <div id="chatbot-window">
+      <div id="chatbot-messages"></div>
+      <input id="chatbot-input" placeholder="Écrivez votre message..." />
+    </div>
+
+    <style>
+      #chatbot-button {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: var(--gold);
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        color: white;
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        z-index: 999;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #chatbot-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(198, 166, 100, 0.4);
+      }
+
+      #chatbot-window {
+        position: fixed;
+        bottom: 95px;
+        right: 24px;
+        width: 300px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 998;
+      }
+
+      #chatbot-messages {
+        padding: 16px;
+        height: 260px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        font-family: "Lexend Deca", sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #chatbot-input {
+        border: none;
+        padding: 14px;
+        font-size: 0.9rem;
+        border-top: 1px solid #eee;
+        outline: none;
+        font-family: "Lexend Deca", sans-serif;
+      }
+
+      .message-user {
+        background: var(--gold);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin-bottom: 0;
+        max-width: 80%;
+        margin-left: auto;
+        word-wrap: break-word;
+      }
+
+      .message-bot {
+        background: #f1f1f1;
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin-bottom: 0;
+        max-width: 80%;
+        word-wrap: break-word;
+      }
+
+      @media (max-width: 768px) {
+        #chatbot-window {
+          width: calc(100% - 48px);
+          right: 24px;
+          left: 24px;
+        }
+      }
+    </style>
+
+    <script>
+      const btn = document.getElementById("chatbot-button");
+      const win = document.getElementById("chatbot-window");
+      const input = document.getElementById("chatbot-input");
+      const messages = document.getElementById("chatbot-messages");
+
+      btn.onclick = () => {
+        win.style.display = win.style.display === "flex" ? "none" : "flex";
+        if (win.style.display === "flex") {
+          input.focus();
+        }
+      };
+
+      function addMessage(content, type) {
+        const div = document.createElement("div");
+        div.className = type === "user" ? "message-user" : "message-bot";
+        div.textContent = content;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      addMessage("Bonjour, comment puis-je vous aider ?", "bot");
+
+      input.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter" && input.value.trim() !== "") {
+          const text = input.value;
+          input.value = "";
+          addMessage(text, "user");
+
+          try {
+            const res = await fetch("/api/chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: text }),
+            });
+
+            const data = await res.json();
+            addMessage(data.reply, "bot");
+          } catch (error) {
+            addMessage("Désolé, une erreur est survenue. Veuillez réessayer.", "bot");
+          }
+        }
+      });
+    </script>
   </body>
 </html>
 
