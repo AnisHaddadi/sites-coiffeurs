@@ -1,1 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avis clients – Valessio Coiffeur Paris | Témoignages et notes</title>
+    <meta
+      name="description"
+      content="Découvrez les avis de nos clients sur Valessio Paris 9. Témoignages authentiques et notes sur nos services de coiffure haut de gamme."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a664;
+        --cream: #f8f5ef;
+        --white: #ffffff;
+        --ink: #1a1a1a;
+        --muted: #777777;
+        --shadow: rgba(0, 0, 0, 0.08);
+      }
 
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+      }
+
+      header {
+        background: var(--white);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-wrapper {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        transition: background 0.3s ease, color 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav li:last-child a {
+        background: var(--gold);
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      nav a.active {
+        background: rgba(198, 166, 100, 0.2);
+        font-weight: 600;
+      }
+
+      nav a:hover {
+        background: rgba(198, 166, 100, 0.18);
+      }
+
+      main {
+        padding: 80px 18px 100px;
+      }
+
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      /* SECTION INTRODUCTION */
+      .intro-section {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 70px;
+      }
+
+      .intro-section h1 {
+        font-size: clamp(2.1rem, 4vw, 3.1rem);
+        margin-bottom: 18px;
+      }
+
+      .intro-section p {
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+
+      /* CARROUSEL D'AVIS */
+      .temoignages-slider {
+        width: 100%;
+        margin: 50px 0;
+      }
+
+      .temoignages-slider h2 {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .slider-container {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .slider-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .slider-container::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+      }
+
+      .slider-container::-webkit-scrollbar-thumb {
+        background: var(--gold, #c6a664);
+        border-radius: 10px;
+      }
+
+      .slider-container::-webkit-scrollbar-thumb:hover {
+        background: #b89654;
+      }
+
+      .avis-card {
+        flex: 0 0 300px;
+        background: var(--white, #fff);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        scroll-snap-align: start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .avis-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      }
+
+      .avis-card .note {
+        font-size: 1.4rem;
+        margin: 0 0 10px;
+        line-height: 1;
+      }
+
+      .avis-card .texte {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 16px;
+        color: var(--ink);
+      }
+
+      .avis-card .auteur {
+        font-size: 0.8rem;
+        color: #777;
+        display: block;
+        margin-top: 8px;
+      }
+
+      /* MODULE ÉTOILES */
+      .module-etoiles {
+        background: var(--white);
+        border-radius: 34px;
+        padding: 50px;
+        box-shadow: 0 40px 120px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(198, 166, 100, 0.15);
+        max-width: 600px;
+        margin: 70px auto 0;
+        text-align: center;
+      }
+
+      .module-etoiles h3 {
+        font-size: clamp(1.6rem, 2.5vw, 2rem);
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+
+      .module-etoiles > p {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      .stars {
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+        justify-content: center;
+      }
+
+      .star {
+        font-size: 2.2rem;
+        background: none;
+        border: none;
+        color: rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: color 0.2s, transform 0.2s;
+        padding: 0;
+        line-height: 1;
+      }
+
+      .star.active,
+      .star:hover {
+        color: var(--gold, #c6a664);
+        transform: scale(1.1);
+      }
+
+      #send-rating {
+        background: var(--gold, #c6a664);
+        color: white;
+        border: none;
+        padding: 12px 26px;
+        border-radius: 999px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: "Lexend Deca", sans-serif;
+      }
+
+      #send-rating:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(198, 166, 100, 0.35);
+      }
+
+      #send-rating:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .module-etoiles small {
+        display: block;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.6;
+      }
+
+      footer {
+        background: #0f0f0f;
+        color: var(--white);
+        padding: 60px 18px;
+        margin-top: 60px;
+      }
+
+      .footer-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+      }
+
+      .footer-inner nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .footer-inner nav a {
+        color: rgba(255, 255, 255, 0.78);
+        text-decoration: none;
+      }
+
+      .footer-inner nav li:last-child a {
+        color: var(--gold);
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .avis-card {
+          flex: 0 0 280px;
+        }
+
+        .module-etoiles {
+          padding: 36px 28px;
+        }
+
+        .stars {
+          gap: 8px;
+        }
+
+        .star {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html">VALESSIO</a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="salons.html">Salons</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="avis.html" class="active" aria-current="page">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- SECTION 1: INTRODUCTION -->
+        <section class="intro-section fade-in">
+          <h1>{{titre_page}}</h1>
+          <p>{{texte_intro}}</p>
+        </section>
+
+        <!-- SECTION 2: CARROUSEL D'AVIS -->
+        <section class="temoignages-slider fade-in" aria-label="Témoignages clients">
+          <h2>Ce que disent nos clients</h2>
+          <div class="slider-container">
+            <!-- Les 5 avis seront générés dynamiquement ici -->
+            <!-- Exemple de structure (à remplacer par les vraies données) -->
+            <article class="avis-card slide">
+              <p class="note">⭐⭐⭐⭐⭐</p>
+              <p class="texte">"{{texte_avis_1}}"</p>
+              <span class="auteur">- {{nom_client_1}} · {{source_avis_1}}</span>
+            </article>
+            <article class="avis-card slide">
+              <p class="note">⭐⭐⭐⭐⭐</p>
+              <p class="texte">"{{texte_avis_2}}"</p>
+              <span class="auteur">- {{nom_client_2}} · {{source_avis_2}}</span>
+            </article>
+            <article class="avis-card slide">
+              <p class="note">⭐⭐⭐⭐⭐</p>
+              <p class="texte">"{{texte_avis_3}}"</p>
+              <span class="auteur">- {{nom_client_3}} · {{source_avis_3}}</span>
+            </article>
+            <article class="avis-card slide">
+              <p class="note">⭐⭐⭐⭐⭐</p>
+              <p class="texte">"{{texte_avis_4}}"</p>
+              <span class="auteur">- {{nom_client_4}} · {{source_avis_4}}</span>
+            </article>
+            <article class="avis-card slide">
+              <p class="note">⭐⭐⭐⭐⭐</p>
+              <p class="texte">"{{texte_avis_5}}"</p>
+              <span class="auteur">- {{nom_client_5}} · {{source_avis_5}}</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- SECTION 3: MODULE INTERACTIF 1-5 ÉTOILES -->
+        <section class="module-etoiles fade-in" aria-label="Laissez votre avis">
+          <h3>Laissez votre note</h3>
+          <p>Choisissez une note et continuez.</p>
+
+          <div class="stars" role="radiogroup" aria-label="Note de 1 à 5 étoiles">
+            <button class="star" data-value="1" aria-label="1 étoile">★</button>
+            <button class="star" data-value="2" aria-label="2 étoiles">★</button>
+            <button class="star" data-value="3" aria-label="3 étoiles">★</button>
+            <button class="star" data-value="4" aria-label="4 étoiles">★</button>
+            <button class="star" data-value="5" aria-label="5 étoiles">★</button>
+          </div>
+
+          <button id="send-rating" disabled>Continuer</button>
+
+          <small>
+            1–3 ★ → Redirection vers un formulaire interne ou Google Forms<br>
+            4–5 ★ → Redirection vers la fiche Google Reviews
+          </small>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <p style="letter-spacing:0.08em;font-weight:600;">VALESSIO</p>
+          <p>Salon de coiffure haut de gamme · Paris 9</p>
+        </div>
+        <nav aria-label="Navigation pied de page">
+          <ul>
+            <li><a href="salons.html">Nos salons</a></li>
+            <li><a href="services.html">Prestations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="avis.html" aria-current="page">Avis clients</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Animation fade-in
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+
+      // Script module étoiles
+      const stars = document.querySelectorAll(".star");
+      const sendButton = document.getElementById("send-rating");
+      let selectedRating = 0;
+
+      function updateStars(value) {
+        stars.forEach((star) => {
+          const v = parseInt(star.dataset.value);
+          star.classList.toggle("active", v <= value);
+        });
+        sendButton.disabled = value === 0;
+      }
+
+      stars.forEach((star) => {
+        star.addEventListener("click", () => {
+          selectedRating = parseInt(star.dataset.value);
+          updateStars(selectedRating);
+        });
+      });
+
+      sendButton.addEventListener("click", () => {
+        if (!selectedRating) return;
+
+        const low = "https://docs.google.com/forms/d/e/1FAIpQLSc7MLSAuvdlXIsboLUaIHPkt4OJ6r7wlDVoUcYp6HTWdlrb8A/viewform?usp=header";
+        const high = "{{lien_google_review}}";
+
+        const target = selectedRating <= 3 ? low : high;
+        window.open(target, "_blank");
+      });
+    </script>
+
+    <!-- Chatbot -->
+    <div id="chatbot-button">💬</div>
+    <div id="chatbot-window">
+      <div id="chatbot-messages"></div>
+      <input id="chatbot-input" placeholder="Écrivez votre message..." />
+    </div>
+
+    <style>
+      #chatbot-button {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: var(--gold);
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        color: white;
+        font-size: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        z-index: 999;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #chatbot-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(198, 166, 100, 0.4);
+      }
+
+      #chatbot-window {
+        position: fixed;
+        bottom: 95px;
+        right: 24px;
+        width: 300px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 998;
+      }
+
+      #chatbot-messages {
+        padding: 16px;
+        height: 260px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        font-family: "Lexend Deca", sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #chatbot-input {
+        border: none;
+        padding: 14px;
+        font-size: 0.9rem;
+        border-top: 1px solid #eee;
+        outline: none;
+        font-family: "Lexend Deca", sans-serif;
+      }
+
+      .message-user {
+        background: var(--gold);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin-bottom: 0;
+        max-width: 80%;
+        margin-left: auto;
+        word-wrap: break-word;
+      }
+
+      .message-bot {
+        background: #f1f1f1;
+        padding: 8px 12px;
+        border-radius: 12px;
+        margin-bottom: 0;
+        max-width: 80%;
+        word-wrap: break-word;
+      }
+
+      @media (max-width: 768px) {
+        #chatbot-window {
+          width: calc(100% - 48px);
+          right: 24px;
+          left: 24px;
+        }
+      }
+    </style>
+
+    <script>
+      const btn = document.getElementById("chatbot-button");
+      const win = document.getElementById("chatbot-window");
+      const input = document.getElementById("chatbot-input");
+      const messages = document.getElementById("chatbot-messages");
+
+      btn.onclick = () => {
+        win.style.display = win.style.display === "flex" ? "none" : "flex";
+        if (win.style.display === "flex") {
+          input.focus();
+        }
+      };
+
+      function addMessage(content, type) {
+        const div = document.createElement("div");
+        div.className = type === "user" ? "message-user" : "message-bot";
+        div.textContent = content;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      addMessage("Bonjour, comment puis-je vous aider ?", "bot");
+
+      input.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter" && input.value.trim() !== "") {
+          const text = input.value;
+          input.value = "";
+          addMessage(text, "user");
+
+          try {
+            const res = await fetch("/api/chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: text }),
+            });
+
+            const data = await res.json();
+            addMessage(data.reply, "bot");
+          } catch (error) {
+            addMessage("Désolé, une erreur est survenue. Veuillez réessayer.", "bot");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
